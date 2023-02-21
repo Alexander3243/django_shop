@@ -1,0 +1,108 @@
+{% extends 'shop/base.html' %}
+
+{% block content %}
+
+<!--Content-->
+<div class="w-80 content_m">
+
+<!--Filters-->
+{% if not search %}
+<div class="filters">
+    <form method="get" id="filterProduct">
+        Filter by price: <input type="number" id="min_input" name="min_input" value="{{min_price}}"> - <input type="number" id="max_input" name="max_input" value="{{max_price}}">
+        <button type="submit"><b>filter</b></button>
+              <div class="dropdown sort">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <b>sort</b>
+              </button>
+                   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <button type="submit" name="orderby" value="price" class="dropdown-item">price (lower first) </button>
+                      <button type="submit" name="orderby" value="-price" class="dropdown-item">price (highest first) </button>
+                      <button type="submit" name="orderby" value="name" class="dropdown-item">name (A-Z) </button>
+                      <button type="submit" name="orderby" value="-name" class="dropdown-item">name (Z-A) </button>
+                   </div>
+              </div>
+    </form>
+</div>
+{% endif%}
+    {% if result >= 0 and search %}
+<div class="search_f">
+    <h1>Search found: {{result}} results </h1>
+
+</div>
+{% endif%}
+{% block list_products %}
+{% endblock list_products %}
+</div>
+
+
+<!--Pagination-->
+<div class="d_pagination">
+    <nav aria-label="..." class="n_pagination">
+        <ul class="pagination">
+
+            {% if page_obj.has_previous %}
+                <li class="page-item">
+                    <a class="page-link" href="?page=1{{search}}{{orderby}}{{filter}}" tabindex="-1">First</a>
+                </li>
+            {% endif %}
+
+            {% if page_obj.number == 1 %}
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1">First</a>
+                </li>
+            {% endif %}
+
+            {% if page_obj.has_previous %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{page_obj.previous_page_number}}{{search}}{{orderby}}{{filter}}" tabindex="-1">Previous</a>
+                </li>
+            {% endif %}
+
+            {% if page_obj.number == 1 %}
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1">Previous</a>
+                </li>
+            {% endif %}
+
+            {% for p in page_obj.paginator.page_range %}
+                {% if page_obj.number == p %}
+                    <li class="page-item active">
+                       <a class="page-link" href="?page={{p}}{{search}}{{orderby}}{{filter}}"> {{page_obj.number}} <span class="sr-only"> (current) </span></a>
+                    </li>
+                {% elif p >= page_obj.number|add:-5 and p <= page_obj.number|add:5 %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{p}}{{search}}{{orderby}}{{filter}}">{{ p }}</a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+
+            {% if page_obj.has_next %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{page_obj.next_page_number}}{{search}}{{orderby}}{{filter}}">Next</a>
+                </li>
+            {% endif %}
+
+            {% if page_obj.number == page_obj.paginator.num_pages %}
+                <li class="page-item disabled">
+                    <a class="page-link" href="#">Next</a>
+                </li>
+            {% endif %}
+
+            {% if page_obj.has_next %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{page_obj.paginator.num_pages}}{{search}}{{orderby}}{{filter}}">Last</a>
+                </li>
+            {% endif %}
+
+            {% if page_obj.number == page_obj.paginator.num_pages %}
+                <li class="page-item disabled">
+                    <a class="page-link" href="#">Last</a>
+                </li>
+            {% endif %}
+
+        </ul>
+    </nav>
+</div>
+
+{% endblock content %}

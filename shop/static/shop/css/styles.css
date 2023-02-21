@@ -1,0 +1,286 @@
+    * {
+   box-sizing: border-box;
+}
+
+.product-item {
+
+   width: 300px;
+   max-height: 440px;
+   min-height: 440px;
+   text-align: center;
+   margin-bottom: 4%;
+   border-bottom: 20px solid #F5F5F5;
+   font-family: "Open Sans";
+   transition: .3s ease-in;
+   float: left;
+   margin-left: 10%;
+   margin-top: 3%;
+}
+
+.product-item img {
+   display: block;
+   width: 100%;
+   max-height: 300px;
+}
+.product-list {
+   background: #fafafa;
+   padding: 15px 0;
+   height: 180px;
+   border-top: 2px solid orange;
+}
+.product-list h3 {
+   font-size: 18px;
+   font-weight: 400;
+   color: #444444;
+   margin: 0 0 10px 0;
+}
+.price {
+   font-size: 16px;
+   color: #fc5a5a;
+   display: block;
+   margin-bottom: 12px;
+}
+.button {
+   text-decoration: none;
+   display: inline-block;
+   padding: 0 12px;
+   background: #cccccc;
+   color: white;
+   text-transform: uppercase;
+   font-size: 12px;
+   line-height: 28px;
+   transition: .3s ease-in;
+   margin-left: 20px;
+}
+.product-item:hover .button {
+   background: #fc5a5a;
+}
+
+.pag_center {
+justify-content: center
+}
+
+
+
+
+/* content */
+
+.content_st {
+position: relative;
+margin-top: -850px;
+margin-left: 300px;
+}
+
+
+
+/* category */
+
+.selected {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: gray;
+    display: block;
+}
+
+
+
+/* sidebar */
+.sidenav {
+    height: 1000px;
+    width: 300px;
+    position: relative;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    padding-top: 120px;
+    padding-left: 100px;
+    float: left;
+
+}
+
+/*style category*/
+
+.active_c {
+    list-style-type: none;
+    color: black;
+
+}
+
+/* content_detail */
+
+.content_detail {
+
+
+}
+
+.pag_center{
+    float: right;
+}
+
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+}
+
+.sidenav a:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+.main {
+    margin-left: 160px; /* Same as the width of the sidenav */
+    font-size: 28px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+.cabinet {
+    width: 1000px;
+    float: left;
+    margin-top: -850px;
+    margin-left: 650px;
+}
+
+.footer {
+    background: gray;
+    color: white;
+    height: 100px;
+    width: 100%;
+    float: left;
+    margin-top: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+}
+
+.cab {
+    margin-left: 33%;
+    margin-top: 8%;
+}
+
+.profile_d {
+    width: 1000px;
+    float: left;
+    margin-top: -950px;
+    margin-left: 650px;
+}
+
+.pag_h {
+    float: left;
+    padding-top: 50px;
+    width: 100%;
+}
+
+.nav_h {
+    width: 400px;
+    margin: 0 auto;
+}
+
+.contacts_d {
+    margin-top: 7%;
+    margin-left: 25%;
+}
+
+.filters {
+    height: 40px;
+    margin-left: 25%;
+}
+
+.content_m {
+    margin-top: 200px;
+}
+
+.sort {
+    margin-right: 10%;
+    float: right;
+}
+
+.search_f {
+    margin-bottom: 3%;
+    width: 65%;
+    float: left;
+    margin-left: 10%;
+}
+
+.sub_b {
+     background: red;
+     border: 0;
+     color: white;
+     margin-bottom: 7px;
+}
+
+.end_s {
+    color: red;
+    font-size: 15px;
+}
+
+.add_c {
+    background: red;
+    border: 0;
+    color: white;
+    margin-bottom: 7px;
+}
+
+.det_m {
+    margin-top: 10%;
+    margin-left: 20%;
+}
+
+.card {
+    width: 26%;
+}
+
+.card_d {
+    float: left;
+    margin-top: -460px;
+    margin-left: 450px;
+}
+
+.p_desc {
+    float: left;
+    height: 400px;
+    width: 90%;
+}
+
+.p_l {
+    float: left;
+}
+
+.chk_st {
+    width: 1000px;
+    float: left;
+    margin-top: -850px;
+    margin-left: 650px;
+}
+
+.f_lft{
+    float: left;
+}
+
+.d_pagination {
+    float: left;
+    padding-top: 100px;
+    width: 100%;
+}
+
+.n_pagination {
+    width: 400px;
+    margin: 0 auto;
+}
+
+.d_created {
+    width: 1000px;
+    float: left;
+    margin-top: -850px;
+    margin-left: 650px;
+}
+

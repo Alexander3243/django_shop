@@ -1,0 +1,161 @@
+    * {
+   box-sizing: border-box;
+}
+
+.product-item {
+
+   width: 300px;
+   max-height: 440px;
+   min-height: 440px;
+   text-align: center;
+   margin: 0 auto;
+   border-bottom: 20px solid #F5F5F5;
+   font-family: "Open Sans";
+   transition: .3s ease-in;
+   float: left;
+   margin-left: 10%;
+   border: 1px  solid black;
+   margin-top: 3%;
+}
+.product-item:hover {
+   border-bottom: 2px solid #fc5a5a;
+}
+.product-item img {
+   display: block;
+   width: 100%;
+   max-height: 300px;
+}
+.product-list {
+   background: #fafafa;
+   padding: 15px 0;
+}
+.product-list h3 {
+   font-size: 18px;
+   font-weight: 400;
+   color: #444444;
+   margin: 0 0 10px 0;
+}
+.price {
+   font-size: 16px;
+   color: #fc5a5a;
+   display: block;
+   margin-bottom: 12px;
+}
+.button {
+   text-decoration: none;
+   display: inline-block;
+   padding: 0 12px;
+   background: #cccccc;
+   color: white;
+   text-transform: uppercase;
+   font-size: 12px;
+   line-height: 28px;
+   transition: .3s ease-in;
+   margin-left: 20px;
+}
+.product-item:hover .button {
+   background: #fc5a5a;
+}
+
+.pag_center {
+justify-content: center
+}
+
+
+
+
+/* content */
+
+.content_st {
+position: relative;
+margin-top: -850px;
+margin-left: 300px;
+}
+
+
+
+/* category */
+
+.selected {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: gray;
+    display: block;
+}
+
+
+
+/* sidebar */
+.sidenav {
+    height: 1000px;
+    width: 300px;
+    position: relative;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    padding-top: 120px;
+    padding-left: 100px;
+
+}
+
+/*style category*/
+
+.active_c {
+    list-style-type: none;
+    color: black;
+
+}
+
+/* content_detail */
+
+.content_detail {
+
+
+}
+
+.pag_center{
+    float: right;
+}
+
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+}
+
+.sidenav a:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+.main {
+    margin-left: 160px; /* Same as the width of the sidenav */
+    font-size: 28px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+.cabinet {
+    width: 1000px;
+    float: left;
+    margin-top: -850px;
+    margin-left: 650px;
+}
+
+.footer {
+    background: black;
+    color: white;
+    height: 100px;
+    width: 100%;
+    text-align: center;
+    float: left;
+    margin-top: 50px;
+}

@@ -1,0 +1,32 @@
+{% extends 'shop/index.html' %}
+
+{% block list_products %}
+
+{% for i in page_obj %}
+        <div class="product-item" id="{{ i.category.name }}">
+            <img src="{{ i.image.url }}">
+            <div class="product-list">
+                <h3>{{i.name}}</h3>
+                <span class="price"> {{ i.price }} UAH</span>
+                {% if i.available >= 10 %}
+                    <form action="{% url 'cart:cart_add' product_id=i.id%}" method="post">
+                        {% csrf_token %}
+                        <span style="display: none;">{{cart_product_form}}</span>
+                        <input type="submit" value="Add to cart" class="button sub_b">
+                    </form>
+                {% elif i.available == 0 %}
+                <b>NOT AVAILABLE</b>
+                {% elif i.available < 10 %}
+                <span class="end_s"> Will end soon </span> <br>
+                <form action="{% url 'cart:cart_add' i.id%}" method="post">
+                        {% csrf_token %}
+                        <span style="display: none;">{{cart_product_form}}</span>
+                        <input type="submit" value="Add to cart" class="button add_c">
+                    </form>
+                {% endif %}
+                <a href="{% url 'detail_product' i.slug %}" class="button">Detail</a>
+            </div>
+        </div>
+{% endfor %}
+
+{% endblock list_products %}

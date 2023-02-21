@@ -1,0 +1,50 @@
+{% include "cabinet/cabinet.html"  %}
+
+<div class="profile_d">
+    <H1>Cart</H1>
+    <div style="margin-top: 40px;">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Image</th>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Unit price</th>
+                <th>Price</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for item in cart %}
+                {% with product=item.product %}
+                    <tr>
+                        <td>
+                            <a href="{{ get_absolute_url }}">
+                                <img src="{{ product.image.url }}" style="width: 100px;">
+                            </a>
+                        </td>
+                        <td>{{ product.name }} </td>
+                        <td>{{ item.quantity }} </td>
+                        <td class="num">{{ item.price }} UAH </td>
+                        <td class="num">{{ item.total_price }} UAH </td>
+                        <td><a href="{% url 'cart:cart_remove_cabinet' product.id %}"> Remove </a></td>
+                    </tr>
+                {% endwith %}
+            {% endfor %}
+            <tr class="total">
+                <td><b>Total</b></td>
+                <td colspan="4"></td>
+                <td class="num">{{ cart.get_total_price }} UAH</td>
+            </tr>
+            </tbody>
+        </table>
+        <p class="text-right">
+                <a href="{% url 'home' %}" class="button light">Continue shopping</a>
+            {% if cart.get_total_price > 0 %}
+                <a href="{% url 'orders:order_create' %}" class="button"> Checkout </a>
+            {% endif %}
+        </p>
+    </div>
+</div>
+
+

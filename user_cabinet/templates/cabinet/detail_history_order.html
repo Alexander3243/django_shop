@@ -1,0 +1,27 @@
+{% include "cabinet/cabinet.html"  %}
+
+<div class="profile_d">
+
+<h1>Order № {{order.id}}</h1>
+<table class="table">
+    <thead>
+    <tr>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Price</th>
+    </tr>
+    </thead>
+
+    {% for p in orders_item %}
+    <tr>
+        <td>{{p.product}}</td>
+        <td>{{p.quantity}}</td>
+        <td>{{p.total_price}} UAH</td>
+    </tr>
+    {% endfor %}
+</table>
+<a href="{% url 'user_cabinet:history_orders' %}"><input type="button" value="Back"/> </a>
+
+</div>
+
+

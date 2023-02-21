@@ -1,0 +1,22 @@
+{% extends 'shop/base.html' %}
+{% block cabinet %}
+
+
+<div class="cab">
+  <ul class="nav nav-pills">
+    <li class="nav-item">
+      <a class="nav-link cabinet_menu"  aria-current="page" href="{% url 'user_cabinet:history_orders' %}" >History</a>
+    </li>
+    <li class="nav-item">
+      <a  class="nav-link cabinet_menu" href="{% url 'user_cabinet:edit_profile' %}">Edit profile</a>
+    </li>
+    <li class="nav-item">
+      <a  class="nav-link cabinet_menu" href="{% url 'user_cabinet:change_password' %}">Change password</a>
+    </li>
+    <li class="nav-item">
+      <a  class="nav-link cabinet_menu" href="{% url 'user_cabinet:cart_profile' %}" tabindex="-1" aria-disabled="true">Cart</a>
+    </li>
+  </ul>
+</div>
+
+{% endblock cabinet %}

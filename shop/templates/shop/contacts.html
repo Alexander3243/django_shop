@@ -1,0 +1,14 @@
+{% extends 'shop/base.html' %}
+
+{% block contacts %}
+
+<div class="contacts_d">
+<h1>Contacts</h1>
+     <br><br>
+    {% for c in contact%}
+        <span><b>{{c.name}}</b>: {{c.data}}</span>
+        <br><br>
+    {% endfor %}
+</div>
+
+{% endblock contacts %}

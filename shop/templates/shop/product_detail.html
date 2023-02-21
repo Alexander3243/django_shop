@@ -1,0 +1,28 @@
+{% extends 'shop/base.html' %}
+
+{% block detail %}
+
+<div class="det_m">
+    <div class="card">
+          <div class="card-body">
+                <h4 class="card-title">{{product.name}}</h4>
+                <br>
+                <img class="card-img-bottom" src="{{product.image.url}}" alt="{{product.name}}">
+          </div>
+    </div>
+ <div class="card_d">
+       <p class="p_desc">{{product.description}}</p>
+       <span class="p_l"><h3> Price {{product.price}} UAH </h3>
+           {% if product.available %}
+            <form action="{% url 'cart:cart_add' product.id%}" method="post">
+                {% csrf_token %}
+                {{cart_product_form}}
+                <input type="submit" value="Add to cart">
+            </form>
+        </span>
+       {% endif %}
+
+</div>
+</div>
+
+{% endblock detail %}

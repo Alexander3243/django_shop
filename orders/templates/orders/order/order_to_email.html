@@ -1,0 +1,24 @@
+{% autoescape off %}
+<html>
+<body>
+<p>Hi {{ order.first_name }}, your order:</p>
+
+<table border="1">
+    <tr>
+        <th>Quantity</th>
+        <th>Product</th>
+        <th>Price</th>
+    </tr>
+{% for c in cart %}
+      <tr>
+        <td>{{c.quantity}}</td>
+        <td>{{c.product}}</td>
+        <td>{{c.total_price}}</td>
+      </tr>
+{% endfor %}
+</table>
+
+<p><b>To pay: {{total}} UAH</b></p>
+</body>
+</html>
+{% endautoescape %}

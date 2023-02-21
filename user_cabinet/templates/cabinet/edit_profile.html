@@ -1,0 +1,24 @@
+{% include "cabinet/cabinet.html"  %}
+
+<div class="profile_d">
+    <H1>Edit profile</H1>
+    <form method="post" class="order-form">
+        {% csrf_token %}
+        {{form.first_name.label}}
+        {{form.first_name}}
+        {{form.last_name.label}}
+        {{form.last_name}}
+        {{form.email.label}}
+        {{form.email}}
+        {{form.city.label}}
+        {{form.city}}
+        {{form.address.label}}
+        {{form.address}}
+        {{form.phone_number.label}}
+        {{form.phone_number}}
+        <br>
+        <button type="submit">Change profile</button>
+    </form>
+</div>
+
+

@@ -1,0 +1,53 @@
+{% extends "shop/base.html" %}
+
+{% block title %} Checkout {% endblock %}
+
+{% block content %}
+<div class="chk_st">
+    <h1>Checkout</h1>
+    <div class="order-info">
+        <h3>Your order</h3>
+        <ul>
+            {% for item in cart %}
+                <li>
+                    {{ item.quantity }} x {{ item.product.name }}
+                    <span>{{ item.total_price }} UAH</span>
+                </li>
+            {% endfor %}
+        </ul>
+        <p>Total: {{ cart.get_total_price }} UAH</p>
+    </div>
+
+    {% if request.user.is_authenticated %}
+         <form action="." method="get" class="order-form">
+             <b>First name:</b> {{request.user}}
+             <br>
+             <b>Last name:</b> {{request.user.last_name}}
+             <br>
+             <b>Email:</b> {{request.user.email}}
+             <br>
+             <b>Address:</b> {{request.user.address}}
+             <br>
+             <b>Phone number:</b> {{request.user.phone_number}}
+             <br>
+             <b>City:</b> {{request.user.city}}
+             <br><br><br>
+             <a class="nav-link navbar-brand f_lft" href="{% url 'cart:cart_detail' %}"> <input type="button" value="Previous"> </a>
+             &nbsp; &nbsp; &nbsp;
+             <input type="submit" value="Place order register">
+             {% csrf_token %}
+         </form>
+    {% else %}
+        <div class="container">
+            <form action="." method="post" class="order-form">
+                {{ form.as_p }}
+                 <a  href="{% url 'cart:cart_detail' %}"> <input class="nav-link navbar-brand f_lft" type="button" value="Previous"> </a>
+                &nbsp;&nbsp;&nbsp;
+                <input class="nav-link navbar-brand f_lft" type="submit" value="Place order">
+                {% csrf_token %}
+            </form>
+        </div>
+    {% endif %}
+
+</div>
+{% endblock %}

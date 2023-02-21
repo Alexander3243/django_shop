@@ -1,0 +1,15 @@
+{% extends 'shop/base.html' %}
+{% block cabinet %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>Profile has been changed</title>
+</head>
+<body>
+    <div class="container profile_d">
+    <H1>Profile has been changed</H1>
+    <a href="{% url 'user_cabinet:edit_profile' %}">Back to cabinet</a>
+    </div>
+</body>
+
+{% endblock cabinet %}
