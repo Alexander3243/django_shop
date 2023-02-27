@@ -1,7 +1,5 @@
 {% for c in category %}
-    {% if c.slug in category_selected %}
-        <li class="selected active_c">{{ c.name }}</li>
-    {% else %}
         <li class="active_c"><a href="{{ c.get_absolute_url }}" name="cat_url"> {{ c.name }} </a></li>
-    {% endif %}
 {% endfor %}
+
+

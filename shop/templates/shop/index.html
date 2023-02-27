@@ -25,12 +25,13 @@
     </form>
 </div>
 {% endif%}
-    {% if result >= 0 and search %}
-<div class="search_f">
-    <h1>Search found: {{result}} results </h1>
 
-</div>
+{% if result >= 0 and search %}
+    <div class="search_f">
+        <h1>Search found: {{result}} results </h1>
+    </div>
 {% endif%}
+
 {% block list_products %}
 {% endblock list_products %}
 </div>

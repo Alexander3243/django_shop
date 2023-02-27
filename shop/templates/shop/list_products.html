@@ -24,7 +24,7 @@
                         <input type="submit" value="Add to cart" class="button add_c">
                     </form>
                 {% endif %}
-                <a href="{% url 'detail_product' i.slug %}" class="button">Detail</a>
+                <a href="{{ i.get_absolute_url }}" class="button">Detail</a>
             </div>
         </div>
 {% endfor %}

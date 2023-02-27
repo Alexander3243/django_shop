@@ -5,13 +5,9 @@ register = template.Library()
 
 
 @register.inclusion_tag('shop/list_category.html')
-def show_category(sort=None, category_selected=0):
-    if not sort:
-        category = Category.objects.all()
-    else:
-        category = Category.objects.order_by(sort)
-
-    return {"category": category, "category_selected": category_selected}
+def show_category():
+    category = Category.objects.all()
+    return {"category": category}
 
 
 @register.inclusion_tag('shop/footer.html')

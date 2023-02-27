@@ -40,7 +40,7 @@ class Product(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('product', kwargs={'product_slug': self.slug})
+        return reverse('detail_product', kwargs={'product_slug': self.slug})
 
 
 class Contacts(models.Model):
@@ -51,6 +51,3 @@ class Contacts(models.Model):
     class Meta:
         verbose_name = 'Contact'
         verbose_name_plural = 'Contacts'
-
-    def get_absolute_url(self):
-        return reverse('contacts', kwargs={'contacts_slug': self.slug})
